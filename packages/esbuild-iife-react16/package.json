@@ -1,0 +1,20 @@
+{
+  "name": "@compulim/esbuild-iife-react16",
+  "version": "0.0.0-0",
+  "description": "",
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "scripts": {
+    "build": "npm run build:copy && npm run build:default",
+    "build:copy": "mkdir -p ./lib/ && cp ../../src/* ./lib/",
+    "build:default": "esbuild ./lib/index.jsx --bundle --define:FLAVOR=\"\\\"esbuild-iife-react16\"\\\" --format=iife --outfile=../../public/asset/js/esbuild-iife-react16/index.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  },
+  "dependencies": {
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  }
+}

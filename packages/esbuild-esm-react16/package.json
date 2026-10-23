@@ -1,0 +1,21 @@
+{
+  "name": "@compulim/esbuild-esm-react16",
+  "version": "0.0.0-0",
+  "description": "",
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:copy && npm run build:default",
+    "build:copy": "mkdir -p ./lib/ && cp ../../src/* ./lib/",
+    "build:default": "esbuild ./lib/index.jsx --bundle --define:FLAVOR=\"\\\"esbuild/esbuild-esm-react16\\\"\" --external:react --external:react-dom --format=esm --outfile=../../public/asset/js/esbuild-esm-react16/index.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  },
+  "dependencies": {
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  }
+}

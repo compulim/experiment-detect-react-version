@@ -1,0 +1,22 @@
+{
+  "name": "@compulim/esbuild-esm-react19",
+  "version": "0.0.0-0",
+  "description": "",
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:copy && npm run build:default && npm run build:jsx-automatic",
+    "build:copy": "mkdir -p ./lib/ && cp ../../src/* ./lib/",
+    "build:default": "esbuild ./lib/index.jsx --bundle --define:FLAVOR=\"\\\"esbuild-esm-react19\\\"\" --external:react --external:react-dom --format=esm --outfile=../../public/asset/js/esbuild-esm-react19/index.js",
+    "build:jsx-automatic": "npm run build:default -- --define:FLAVOR=\"\\\"esbuild-esm-react19-jsx-automatic\\\"\" --outfile=../../public/asset/js/esbuild-esm-react19/jsx-automatic.js"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

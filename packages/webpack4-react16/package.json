@@ -1,0 +1,24 @@
+{
+  "name": "@compulim/webpack4-react16",
+  "version": "0.0.0-0",
+  "description": "",
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:copy && npm run build:default",
+    "build:copy": "mkdir -p ./lib/ && cp ../../src/* ./lib/",
+    "build:default": "webpack"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.29.7",
+    "babel-loader": "^8.4.1",
+    "webpack": "^4.47.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  }
+}

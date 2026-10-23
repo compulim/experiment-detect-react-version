@@ -1,0 +1,21 @@
+{
+  "name": "@compulim/esbuild-iife-react19",
+  "version": "0.0.0-0",
+  "description": "",
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "scripts": {
+    "build": "npm run build:copy && npm run build:default && npm run build:jsx-automatic",
+    "build:copy": "mkdir -p ./lib/ && cp ../../src/* ./lib/",
+    "build:default": "esbuild ./lib/index.jsx --bundle --define:FLAVOR=\"\\\"iife-react19\"\\\" --format=iife --outfile=../../public/asset/js/esbuild-iife-react19/index.js",
+    "build:jsx-automatic": "npm run build:default -- --define:FLAVOR=\"\\\"iife-react19-jsx-automatic\\\"\" --jsx=automatic --outfile=../../public/asset/js/esbuild-iife-react19/jsx-automatic.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}
