@@ -8,6 +8,7 @@
   "main": "./src/index.js",
   "scripts": {
     "build": "for dir in packages/*; do [ -d \"$dir\" ] && (cd \"$dir\" && npm run build); done",
+    "prepare": "for dir in packages/*; do [ -d \"$dir\" ] && (cd \"$dir\" && npm ci); done",
     "start": "npx --offline serve -p 5001 ./public"
   },
   "devDependencies": {
